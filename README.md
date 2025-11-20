@@ -1,7 +1,6 @@
 欢迎付骏怡登舰！
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta name="google-site-verification" content="nvR5HccczyAA8jNXLNqO3pslMFm8AWp1JCqGeqW3R-k" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-lang-key="head.title">Student Science Hub | 理科学习空间</title>
@@ -145,6 +144,7 @@
             padding-right: 10px;
         }
     </style>
+    <meta name="google-site-verification" content="nvR5HccczyAA8jNXLNqO3pslMFm8AWp1JCqGeqW3R-k" />
 </head>
 <body>
 
