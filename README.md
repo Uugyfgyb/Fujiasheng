@@ -421,6 +421,13 @@
                 "subjects.physics_t1": "Newtonian Mechanics",
                 "subjects.physics_t2": "Electromagnetism",
                 "subjects.physics_t3": "Relativity",
+                <a 
+href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad3306841aea536b76cb6f92/group-theory-chap7.pdf"
+  download="群论第7章.pdf"
+>
+  点击下载 群论 (group-theory) 第七章 PDF
+</a>
+
                 "subjects.chemistry_detail": "The central science of matter and change. Atomic structures and organic synthesis.",
                 "subjects.chem_t1": "Organic Chemistry",
                 "subjects.chem_t2": "Kinetics",
