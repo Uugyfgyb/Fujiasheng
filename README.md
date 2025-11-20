@@ -1,4 +1,5 @@
 欢迎付骏怡登舰！
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -85,6 +86,41 @@
         }
         #ai-result-text li {
             margin-bottom: 0.25rem;
+        }
+
+        /* 子分类列表样式 */
+        .sub-topic-list {
+            margin-left: 0.75rem;
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sub-topic-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+        .sub-topic-item:hover {
+            color: #e2e8f0;
+        }
+        /* 文件链接预留位样式 */
+        .file-link-placeholder {
+            margin-left: auto;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            color: #64748b;
+            border: 1px dashed #475569;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .file-link-placeholder:hover {
+            color: #38bdf8;
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
         }
 
         /* 自定义滚动条 */
@@ -195,7 +231,7 @@
                                 <h3 class="text-lg font-semibold text-cyan-200" data-lang-key="home.intro_title">舰长简介</h3>
                             </div>
                             <p class="text-gray-300 text-sm leading-relaxed" data-lang-key="home.intro_content">
-                                欢迎登舰！我是这艘知识飞船的驾驶员。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！
+                                欢迎登舰！我是这艘知识飞船的驾驶员付嘉圣。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！
                             </p>
                         </div>
                     </div>
@@ -268,46 +304,297 @@
                 <!-- 数学内容 -->
                 <div id="subject-content-math" class="subject-content active relative z-10">
                     <h3 class="text-2xl font-semibold mb-4 text-blue-300" data-lang-key="subject.math">数学 (Mathematics)</h3>
-                    <p class="text-gray-300 mb-4 leading-relaxed" data-lang-key="subjects.math_detail">数学是科学的语言。本板块包含函数、微积分、线性代数、概率论等核心概念的笔记和练习。</p>
-                    <h4 class="text-lg font-semibold mt-6 mb-3 text-white" data-lang-key="subjects.topics">重点星域：</h4>
-                    <ul class="list-none space-y-2 text-gray-400">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span><span data-lang-key="subjects.math_t1">微积分 (Calculus)</span></li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span><span data-lang-key="subjects.math_t2">线性代数 (Linear Algebra)</span></li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span><span data-lang-key="subjects.math_t3">概率与统计 (Probability & Statistics)</span></li>
-                    </ul>
+                    <p class="text-gray-300 mb-6 leading-relaxed" data-lang-key="subjects.math_detail">数学是科学的语言。本板块包含函数、微积分、线性代数、概率论等核心概念的笔记和练习。</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- 微积分 -->
+                        <div class="bg-blue-900/20 rounded-lg p-4 border border-blue-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.math_t1">微积分 (Calculus)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t1.s1">极限与连续 (Limits)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t1.s2">导数应用 (Derivatives)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t1.s3">定积分与不定积分 (Integrals)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 线性代数 -->
+                        <div class="bg-blue-900/20 rounded-lg p-4 border border-blue-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.math_t2">线性代数 (Linear Algebra)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t2.s1">矩阵运算 (Matrices)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t2.s2">向量空间 (Vector Spaces)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t2.s3">特征值与特征向量 (Eigenvalues)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                         <!-- 概率统计 -->
+                         <div class="bg-blue-900/20 rounded-lg p-4 border border-blue-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.math_t3">概率与统计 (Probability)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t3.s1">概率分布 (Distributions)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t3.s2">假设检验 (Hypothesis Testing)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="math.t3.s3">回归分析 (Regression)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
                 <!-- 物理内容 -->
                 <div id="subject-content-physics" class="subject-content hidden relative z-10">
                     <h3 class="text-2xl font-semibold mb-4 text-purple-300" data-lang-key="subject.physics">物理 (Physics)</h3>
-                    <p class="text-gray-300 mb-4 leading-relaxed" data-lang-key="subjects.physics_detail">物理学探索宇宙的基本原理。这里有关于经典力学、电磁学、热力学和现代物理学的学习记录。</p>
-                    <h4 class="text-lg font-semibold mt-6 mb-3 text-white" data-lang-key="subjects.topics">重点星域：</h4>
-                    <ul class="list-none space-y-2 text-gray-400">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span><span data-lang-key="subjects.physics_t1">牛顿力学 (Newtonian Mechanics)</span></li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span><span data-lang-key="subjects.physics_t2">电磁学 (Electromagnetism)</span></li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span><span data-lang-key="subjects.physics_t3">相对论 (Relativity)</span></li>
-                    </ul>
+                    <p class="text-gray-300 mb-6 leading-relaxed" data-lang-key="subjects.physics_detail">物理学探索宇宙的基本原理。这里有关于经典力学、电磁学、热力学和现代物理学的学习记录。</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- 牛顿力学 -->
+                        <div class="bg-purple-900/20 rounded-lg p-4 border border-purple-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.physics_t1">牛顿力学 (Newtonian Mechanics)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t1.s1">运动学 (Kinematics)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t1.s2">牛顿定律 (Newton's Laws)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t1.s3">能量守恒 (Energy Conservation)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 电磁学 -->
+                        <div class="bg-purple-900/20 rounded-lg p-4 border border-purple-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.physics_t2">电磁学 (Electromagnetism)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t2.s1">静电场 (Electrostatics)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t2.s2">磁场与感应 (Magnetism)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t2.s3">麦克斯韦方程 (Maxwell Eqs)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 相对论 -->
+                        <div class="bg-purple-900/20 rounded-lg p-4 border border-purple-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.physics_t3">相对论 (Relativity)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t3.s1">狭义相对论 (Special Relativity)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t3.s2">广义相对论 (General Relativity)</span>
+                                    <a href="#" class="file-link-placeholder" title="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/3caa37efbff3199367cf48ef025c05987a5edb75/AtomicPhysics.pdf">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="phy.t3.s3">黑洞物理 (Black Holes)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
                 <!-- 化学内容 -->
                 <div id="subject-content-chemistry" class="subject-content hidden relative z-10">
                     <h3 class="text-2xl font-semibold mb-4 text-green-300" data-lang-key="subject.chemistry">化学 (Chemistry)</h3>
-                    <p class="text-gray-300 mb-4 leading-relaxed" data-lang-key="subjects.chemistry_detail">化学是研究物质及其变化的中心科学。内容涵盖原子结构、化学键、热化学和有机化学。</p>
-                    <h4 class="text-lg font-semibold mt-6 mb-3 text-white" data-lang-key="subjects.topics">重点星域：</h4>
-                    <ul class="list-none space-y-2 text-gray-400">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span><span data-lang-key="subjects.chem_t1">有机化学 (Organic Chemistry)</span></li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span><span data-lang-key="subjects.chem_t2">化学反应动力学 (Kinetics)</span></li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span><span data-lang-key="subjects.chem_t3">元素周期表 (Periodic Table)</span></li>
-                    </ul>
+                    <p class="text-gray-300 mb-6 leading-relaxed" data-lang-key="subjects.chemistry_detail">化学是研究物质及其变化的中心科学。内容涵盖原子结构、化学键、热化学和有机化学。</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- 有机化学 -->
+                        <div class="bg-green-900/20 rounded-lg p-4 border border-green-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.chem_t1">有机化学 (Organic Chemistry)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t1.s1">烃类与官能团 (Hydrocarbons)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t1.s2">反应机理 (Reaction Mechanisms)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t1.s3">立体化学 (Stereochemistry)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 动力学 -->
+                        <div class="bg-green-900/20 rounded-lg p-4 border border-green-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.chem_t2">化学反应动力学 (Kinetics)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t2.s1">速率方程 (Rate Laws)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t2.s2">催化剂作用 (Catalysis)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t2.s3">化学平衡 (Equilibrium)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 周期表 -->
+                        <div class="bg-green-900/20 rounded-lg p-4 border border-green-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.chem_t3">元素周期表 (Periodic Table)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t3.s1">原子结构 (Atomic Structure)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t3.s2">周期律 (Periodic Trends)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="chem.t3.s3">过渡金属 (Transition Metals)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
                 <!-- 生物内容 -->
                 <div id="subject-content-biology" class="subject-content hidden relative z-10">
                     <h3 class="text-2xl font-semibold mb-4 text-rose-300" data-lang-key="subject.biology">生物 (Biology)</h3>
-                    <p class="text-gray-300 mb-4 leading-relaxed" data-lang-key="subjects.biology_detail">生物学探索生命的奇迹。本部分包括细胞生物学、遗传学、进化论和生态学的笔记。</p>
-                    <h4 class="text-lg font-semibold mt-6 mb-3 text-white" data-lang-key="subjects.topics">重点星域：</h4>
-                    <ul class="list-none space-y-2 text-gray-400">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-400 rounded-full mr-3"></span><span data-lang-key="subjects.bio_t1">遗传学与 DNA (Genetics & DNA)</span></li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-400 rounded-full mr-3"></span><span data-lang-key="subjects.bio_t2">细胞生物学 (Cell Biology)</span></li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-400 rounded-full mr-3"></span><span data-lang-key="subjects.bio_t3">进化论 (Evolution)</span></li>
-                    </ul>
+                    <p class="text-gray-300 mb-6 leading-relaxed" data-lang-key="subjects.biology_detail">生物学探索生命的奇迹。本部分包括细胞生物学、遗传学、进化论和生态学的笔记。</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- 遗传学 -->
+                        <div class="bg-rose-900/20 rounded-lg p-4 border border-rose-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-rose-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.bio_t1">遗传学 (Genetics)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t1.s1">孟德尔定律 (Mendelian)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t1.s2">DNA复制 (DNA Replication)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t1.s3">基因工程 (Gene Engineering)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 细胞生物学 -->
+                        <div class="bg-rose-900/20 rounded-lg p-4 border border-rose-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-rose-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.bio_t2">细胞生物学 (Cell Biology)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t2.s1">细胞器功能 (Organelles)</span>
+                                    <a href="#" class="file-link-placeholder" title="href="">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t2.s2">膜运输 (Membrane Transport)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t2.s3">信号转导 (Signal Transduction)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 进化论 -->
+                        <div class="bg-rose-900/20 rounded-lg p-4 border border-rose-500/10">
+                            <h4 class="flex items-center text-lg font-semibold mb-3 text-white">
+                                <span class="w-2 h-2 bg-rose-400 rounded-full mr-3"></span>
+                                <span data-lang-key="subjects.bio_t3">进化论 (Evolution)</span>
+                            </h4>
+                            <ul class="sub-topic-list">
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t3.s1">自然选择 (Natural Selection)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t3.s2">物种形成 (Speciation)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                                <li class="sub-topic-item">
+                                    <span data-lang-key="bio.t3.s3">化石证据 (Fossil Records)</span>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -360,22 +647,22 @@
                 <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
                     <h3 class="text-xl font-semibold text-cyan-300 mb-2" data-lang-key="resources.r1_title">可汗学院 (Khan Academy)</h3>
                     <p class="text-gray-400 text-sm mb-3" data-lang-key="resources.r1_desc">全学科覆盖的免费知识宝库。</p>
-                    <a href="https://www.khanacademy.org/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门 &rarr;</a>
+                    <a href="https://www.khanacademy.org/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门</a>
                 </div>
                  <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
                     <h3 class="text-xl font-semibold text-cyan-300 mb-2" data-lang-key="resources.r2_title">3Blue1Brown</h3>
                     <p class="text-gray-400 text-sm mb-3" data-lang-key="resources.r2_desc">用唯美的可视化动画展示数学之美。</p>
-                    <a href="https://www.youtube.com/c/3blue1brown" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门 &rarr;</a>
+                    <a href="https://www.youtube.com/c/3blue1brown" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门</a>
                 </div>
                  <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
                     <h3 class="text-xl font-semibold text-cyan-300 mb-2" data-lang-key="resources.r3_title">WolframAlpha</h3>
                     <p class="text-gray-400 text-sm mb-3" data-lang-key="resources.r3_desc">强大的计算知识引擎，科学家的外脑。</p>
-                    <a href="https://www.wolframalpha.com/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门 &rarr;</a>
+                    <a href="https://www.wolframalpha.com/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门</a>
                 </div>
                  <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
                     <h3 class="text-xl font-semibold text-cyan-300 mb-2" data-lang-key="resources.r4_title">PhET 互动模拟</h3>
                     <p class="text-gray-400 text-sm mb-3" data-lang-key="resources.r4_desc">直观的物理与化学沙盒模拟。</p>
-                    <a href="https://phet.colorado.edu/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门 &rarr;</a>
+                    <a href="https://phet.colorado.edu/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门</a>
                 </div>
             </div>
         </section>
@@ -389,7 +676,7 @@
 
     <!-- JavaScript 脚本 -->
     <script>
-        // 语言翻译数据 (已更新部分文案以匹配“宇宙”主题)
+        // 语言翻译数据
         const translations = {
             en: {
                 "head.title": "Quantum Science Hub",
@@ -401,7 +688,7 @@
                 "home.subtitle": "Explore the cosmos of logic, laws, matter, and life.",
                 "home.subjects_title": "Choose Your Sector",
                 "home.intro_title": "Captain's Log",
-                "home.intro_content": "Welcome aboard! I am the ”pilot：Jiasheng Fu Felix“ of this knowledge starship. Passionate about decoding the universe's equations—from the infinite mysteries of calculus to the microscopic dance of chemical bonds. No rote memorization here, only the endless pursuit of truth. Let's warp into the unknown!",
+                "home.intro_content": "Welcome aboard! I am the pilot Felix of this knowledge starship. Passionate about decoding the universe's equations—from the infinite mysteries of calculus to the microscopic dance of chemical bonds. No rote memorization here, only the endless pursuit of truth. Let's warp into the unknown!",
                 "subject.math": "Mathematics",
                 "subject.math_desc": "Star charts of logic & numbers.",
                 "subject.physics": "Physics",
@@ -421,13 +708,6 @@
                 "subjects.physics_t1": "Newtonian Mechanics",
                 "subjects.physics_t2": "Electromagnetism",
                 "subjects.physics_t3": "Relativity",
-                <a 
-href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad3306841aea536b76cb6f92/group-theory-chap7.pdf"
-  download="群论第7章.pdf"
->
-  点击下载 群论 (group-theory) 第七章 PDF
-</a>
-
                 "subjects.chemistry_detail": "The central science of matter and change. Atomic structures and organic synthesis.",
                 "subjects.chem_t1": "Organic Chemistry",
                 "subjects.chem_t2": "Kinetics",
@@ -454,7 +734,44 @@ href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad33
                 "ai.loading": "Establishing Quantum Link...",
                 "ai.error": "Signal lost. Please retry.",
                 "ai.general_science": "General Science",
-                "footer.text": "© 2025 Quantum Learning Hub. All rights reserved."
+                "footer.text": "© 2025 Quantum Learning Hub. All rights reserved.",
+                // New Translations
+                "math.t1.s1": "Limits & Continuity",
+                "math.t1.s2": "Applications of Derivatives",
+                "math.t1.s3": "Integrals & Antiderivatives",
+                "math.t2.s1": "Matrix Operations",
+                "math.t2.s2": "Vector Spaces",
+                "math.t2.s3": "Eigenvalues & Eigenvectors",
+                "math.t3.s1": "Probability Distributions",
+                "math.t3.s2": "Hypothesis Testing",
+                "math.t3.s3": "Regression Analysis",
+                "phy.t1.s1": "Kinematics",
+                "phy.t1.s2": "Newton's Laws",
+                "phy.t1.s3": "Energy Conservation",
+                "phy.t2.s1": "Electrostatics",
+                "phy.t2.s2": "Magnetism & Induction",
+                "phy.t2.s3": "Maxwell's Equations",
+                "phy.t3.s1": "Special Relativity",
+                "phy.t3.s2": "General Relativity",
+                "phy.t3.s3": "Black Hole Physics",
+                "chem.t1.s1": "Hydrocarbons & Functional Groups",
+                "chem.t1.s2": "Reaction Mechanisms",
+                "chem.t1.s3": "Stereochemistry",
+                "chem.t2.s1": "Rate Laws",
+                "chem.t2.s2": "Catalysis",
+                "chem.t2.s3": "Chemical Equilibrium",
+                "chem.t3.s1": "Atomic Structure",
+                "chem.t3.s2": "Periodic Trends",
+                "chem.t3.s3": "Transition Metals",
+                "bio.t1.s1": "Mendelian Genetics",
+                "bio.t1.s2": "DNA Replication",
+                "bio.t1.s3": "Genetic Engineering",
+                "bio.t2.s1": "Organelle Function",
+                "bio.t2.s2": "Membrane Transport",
+                "bio.t2.s3": "Signal Transduction",
+                "bio.t3.s1": "Natural Selection",
+                "bio.t3.s2": "Speciation",
+                "bio.t3.s3": "Fossil Records"
             },
             cn: {
                 "head.title": "理科量子空间",
@@ -466,7 +783,7 @@ href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad33
                 "home.subtitle": "探索数学的逻辑星云，穿越物理的法则虫洞，解构化学的元素矩阵，见证生物的生命奇迹。",
                 "home.subjects_title": "选择探索象限",
                 "home.intro_title": "舰长简介",
-                "home.intro_content": "欢迎登舰！我是这艘知识飞船的驾驶员：付嘉圣 Felix。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！",
+                "home.intro_content": "欢迎登舰！我是这艘知识飞船的驾驶员Felix付嘉圣。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！",
                 "subject.math": "数学",
                 "subject.math_desc": "逻辑与数字的星图。",
                 "subject.physics": "物理",
@@ -486,14 +803,6 @@ href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad33
                 "subjects.physics_t1": "牛顿力学 (Newtonian Mechanics)",
                 "subjects.physics_t2": "电磁学 (Electromagnetism)",
                 "subjects.physics_t3": "相对论 (Relativity)",
-                
-                <a 
-  href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad3306841aea536b76cb6f92/group-theory-chap7.pdf"
-  download="群论第7章.pdf"
->
-  点击下载 群论 (group-theory) 第七章 PDF
-</a>
-
                 "subjects.chemistry_detail": "化学是研究物质及其变化的中心科学。内容涵盖原子结构、化学键、热化学和有机化学。",
                 "subjects.chem_t1": "有机化学 (Organic Chemistry)",
                 "subjects.chem_t2": "化学反应动力学 (Kinetics)",
@@ -506,7 +815,7 @@ href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad33
                 "resources.desc": "精选的高质量学习信标，指引你的探索之路。",
                 "resources.r1_title": "可汗学院 (Khan Academy)",
                 "resources.r1_desc": "全学科覆盖的免费知识宝库。",
-                "resources.link": "开启传送门",
+                "resources.link": "开启传送门 &rarr;",
                 "resources.r2_title": "3Blue1Brown",
                 "resources.r2_desc": "用唯美的可视化动画展示数学之美。",
                 "resources.r3_title": "WolframAlpha",
@@ -520,7 +829,44 @@ href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad33
                 "ai.loading": "正在建立量子连接...",
                 "ai.error": "信号丢失，请重试。",
                 "ai.general_science": "综合理科",
-                "footer.text": "© 2025 Quantum Learning Hub. All rights reserved."
+                "footer.text": "© 2025 Quantum Learning Hub. All rights reserved.",
+                // New Translations
+                "math.t1.s1": "极限与连续 (Limits)",
+                "math.t1.s2": "导数应用 (Derivatives)",
+                "math.t1.s3": "定积分与不定积分 (Integrals)",
+                "math.t2.s1": "矩阵运算 (Matrices)",
+                "math.t2.s2": "向量空间 (Vector Spaces)",
+                "math.t2.s3": "特征值与特征向量 (Eigenvalues)",
+                "math.t3.s1": "概率分布 (Distributions)",
+                "math.t3.s2": "假设检验 (Hypothesis Testing)",
+                "math.t3.s3": "回归分析 (Regression)",
+                "phy.t1.s1": "运动学 (Kinematics)",
+                "phy.t1.s2": "牛顿定律 (Newton's Laws)",
+                "phy.t1.s3": "能量守恒 (Energy Conservation)",
+                "phy.t2.s1": "静电场 (Electrostatics)",
+                "phy.t2.s2": "磁场与感应 (Magnetism)",
+                "phy.t2.s3": "麦克斯韦方程 (Maxwell Eqs)",
+                "phy.t3.s1": "狭义相对论 (Special Relativity)",
+                "phy.t3.s2": "广义相对论 (General Relativity)",
+                "phy.t3.s3": "黑洞物理 (Black Holes)",
+                "chem.t1.s1": "烃类与官能团 (Hydrocarbons)",
+                "chem.t1.s2": "反应机理 (Reaction Mechanisms)",
+                "chem.t1.s3": "立体化学 (Stereochemistry)",
+                "chem.t2.s1": "速率方程 (Rate Laws)",
+                "chem.t2.s2": "催化剂作用 (Catalysis)",
+                "chem.t2.s3": "化学平衡 (Equilibrium)",
+                "chem.t3.s1": "原子结构 (Atomic Structure)",
+                "chem.t3.s2": "周期律 (Periodic Trends)",
+                "chem.t3.s3": "过渡金属 (Transition Metals)",
+                "bio.t1.s1": "孟德尔定律 (Mendelian)",
+                "bio.t1.s2": "DNA复制 (DNA Replication)",
+                "bio.t1.s3": "基因工程 (Gene Engineering)",
+                "bio.t2.s1": "细胞器功能 (Organelles)",
+                "bio.t2.s2": "膜运输 (Membrane Transport)",
+                "bio.t2.s3": "信号转导 (Signal Transduction)",
+                "bio.t3.s1": "自然选择 (Natural Selection)",
+                "bio.t3.s2": "物种形成 (Speciation)",
+                "bio.t3.s3": "化石证据 (Fossil Records)"
             }
         };
 
@@ -630,7 +976,7 @@ href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad33
                 const responseLang = currentLang === 'cn' ? '中文' : 'English';
                 const systemPrompt = `You are a futuristic science guide. Explain the concept clearly and concisely, suitable for a student exploring the universe of knowledge. Context: ${activeSubject}. Respond in ${responseLang} using Markdown.`;
                 
-                const apiKey = ""; //
+                const apiKey = ""; // Keep empty
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${AIzaSyArzbmAPfYzLpvxY7yQoT_pXvt88w46HDg}`;
 
                 const payload = {
