@@ -409,6 +409,7 @@
                 "subjects.physics_t1": "Newtonian Mechanics",
                 "subjects.physics_t2": "Electromagnetism",
                 "subjects.physics_t3": "Relativity",
+                
                   <a 
   href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad3306841aea536b76cb6f92/group-theory-chap7.pdf"
   download="群论第7章.pdf"
@@ -422,6 +423,7 @@
 >
   点击下载 GT.pdf 文件
 </a>
+
                 "subjects.chemistry_detail": "Chemistry is the central science studying matter and its changes. Content covers atomic structure, chemical bonds, thermochemistry, and organic chemistry.",
                 "subjects.chem_t1": "Organic Chemistry",
                 "subjects.chem_t2": "Kinetics",
@@ -510,6 +512,7 @@
 >
   点击下载 GT.pdf 文件
 </a>
+
                 "subjects.chemistry_detail": "化学是研究物质及其变化的中心科学。内容涵盖原子结构、化学键、热化学和有机化学。",
                 "subjects.chem_t1": "有机化学 (Organic Chemistry)",
                 "subjects.chem_t2": "化学反应动力学 (Kinetics)",
