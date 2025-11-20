@@ -333,10 +333,19 @@
                                 <span data-lang-key="subjects.math_t1">微积分 (Calculus)</span>
                             </h4>
                             <ul class="sub-topic-list">
-                                <li class="sub-topic-item">
-                                    <span data-lang-key="math.t1.s1">极限与连续 (Limits)</span>
-                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
-                                </li>
+                <!-- 1. 极限与连续 -->
+                <li class="sub-topic-item flex justify-between items-center py-2 border-b border-blue-500/10 last:border-b-0">
+                    <span data-lang-key="math.t1.s1" class="text-gray-300">极限与连续 (Limits)</span>
+                    <!-- 链接已修改为实际下载地址 -->
+                    <a href="https://github.com/Uugyfgyb/Fujiasheng/blob/main/%E5%A4%8D%E5%88%86%E6%9E%90.pdf" 
+                       download 
+                       class="text-blue-400 hover:text-blue-300 transition-colors font-medium text-sm rounded-md p-1 px-2 bg-blue-500/10 hover:bg-blue-500/20" 
+                       title="下复分析资料 (PDF文件)">
+                        资料
+                        <!-- 这里的图标可以替换为文件类型图标 -->
+                        <svg class="w-4 h-4 inline-block align-text-bottom ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </a>
+                </li>
                                 <li class="sub-topic-item">
                                     <span data-lang-key="math.t1.s2">导数应用 (Derivatives)</span>
                                     <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
