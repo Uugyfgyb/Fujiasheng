@@ -221,7 +221,9 @@
                         
                         <li data-lang-key="subjects.physics_t3">相对论 (Relativity)</li>
 
-                        <li data-lang-key="subjects.physics_t4>原子粒子物理 (Atomic)</li>
+                        <li data-lang-key="subjects.physics_t4>"原子粒子物理 (Atomic)</li>
+
+                    
                         <a 
   href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/3caa37efbff3199367cf48ef025c05987a5edb75/AtomicPhysics.pdf"
   download="AtomicPhysics.pdf"
@@ -254,44 +256,168 @@
                 </div>
             </div>
 
-            <!-- ✨ 新增的 AI 概念解析功能 ✨ -->
-            <div class="mt-12 bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200">
-                <h3 class="text-2xl font-bold mb-4 flex items-center text-gray-900">
-                    <span class="text-yellow-500 mr-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M12 21v-1" />
-                        </svg>
-                    </span>
-                    <span data-lang-key="ai.title">AI 概念解析</span>
-                </h3>
-                <p class="text-gray-700 mb-5" data-lang-key="ai.desc">
-                    对某个理科概念感到困惑吗？问问 AI 吧！
-                </p>
-                <div class="flex flex-col sm:flex-row gap-2 mb-4">
-                    <input id="ai-prompt" type="text" class="flex-grow p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 outline-none" data-lang-key="ai.placeholder" placeholder="输入一个理科概念 (如：牛顿第二定律)">
-                    <button id="ai-submit-btn" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold py-3 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed">
-                        <span class="mr-2">✨</span>
-                        <span data-lang-key="ai.button">提问</span>
-                    </button>
+          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Science Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 应用字体 */
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .page-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            transform: translateY(20px);
+        }
+        .page-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 导航链接激活状态 */
+        .nav-link.active {
+            background-color: #1D4ED8;
+            color: white;
+        }
+        
+        /* AI 加载效果 */
+        .loading-spinner {
+            animation: spin 2s infinite linear;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body class="bg-gray-200 text-gray-800">
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-xl ml-2 text-blue-700">理科学习空间</span>
                 </div>
-                <!-- 结果区 -->
-                <div id="ai-result-container" class="mt-4 p-5 bg-gray-50 rounded-lg border border-gray-200 min-h-[100px]" style="display: none;">
-                    <!-- 加载中 -->
-                    <div id="ai-loading" class="text-center py-4" style="display: none;">
-                        <svg class="animate-spin h-6 w-6 text-blue-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        <p class="mt-2 text-gray-600" data-lang-key="ai.loading">正在思考中...</p>
-                    </div>
-                    <!-- 结果 -->
-                    <div id="ai-result-text" class="text-gray-800 space-y-3 leading-relaxed"></div>
-                    <!-- 错误信息 -->
-                    <div id="ai-error" class="text-red-600 font-medium" style="display: none;"></div>
+                <div class="flex items-center">
+                    <button id="lang-switcher" class="px-3 py-2 rounded-md text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-all">English</button>
                 </div>
             </div>
+        </div>
+    </nav>
 
+    <!-- 主内容区 -->
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        <section id="home" class="page-section active">
+            <div class="relative bg-gradient-to-r from-pink-600 to-indigo-700 text-blue p-10 sm:p-16 rounded-2xl shadow-xl overflow-hidden mb-12">
+                <div class="relative z-10">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">欢迎来到我的自由理科空间</h1>
+                    <p class="text-xl md:text-2xl">探索、学习、分享：我的数学、物理、化学与生物之旅。</p>
+                </div>
+            </div>
         </section>
+
+        <section id="ai-section" class="page-section">
+            <h2 class="text-3xl font-bold mb-6">AI 概念解析</h2>
+            <p class="text-lg mb-4">对某个理科概念感到困惑吗？问问 AI 吧！</p>
+
+            <div class="flex flex-col sm:flex-row gap-2 mb-4">
+                <input id="ai-prompt" type="text" class="flex-grow p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="输入一个理科概念 (如：牛顿第二定律)">
+                <button id="ai-submit-btn" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold py-3 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300" disabled>
+                    提问
+                </button>
+            </div>
+
+            <div id="ai-result-container" class="mt-4 p-5 bg-gray-50 rounded-lg border border-gray-200 min-h-[100px]" style="display: none;">
+                <div id="ai-loading" class="text-center py-4" style="display: none;">
+                    <svg class="loading-spinner h-6 w-6 text-blue-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <p class="mt-2 text-gray-600">正在思考中...</p>
+                </div>
+                <div id="ai-result-text" class="text-gray-800 space-y-3 leading-relaxed"></div>
+                <div id="ai-error" class="text-red-600 font-medium" style="display: none;"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="text-center p-6 mt-12 bg-gray-200">
+        <p class="text-gray-600">&copy; 2025 [你的名字]. 保留所有权利。</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 语言切换函数
+        let currentLang = 'cn';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.getElementById('lang-switcher').textContent = lang === 'en' ? '中文' : 'English';
+        }
+
+        document.getElementById('lang-switcher').addEventListener('click', () => {
+            setLanguage(currentLang === 'en' ? 'cn' : 'en');
+        });
+
+        // AI 提问按钮事件
+        document.getElementById('ai-submit-btn').addEventListener('click', async () => {
+            const userQuery = document.getElementById('ai-prompt').value.trim();
+            if (!userQuery) return;
+
+            // 禁用按钮和显示加载动画
+            document.getElementById('ai-submit-btn').disabled = true;
+            document.getElementById('ai-loading').style.display = 'block';
+
+            // 请求 AI 内容
+            try {
+                const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent?key=AlzaSyArzbmAPfYzLpvvX7yQoT_pXvt88w46HDg", {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: userQuery }] }],
+                        systemInstruction: { parts: [{ text: `You are a helpful science tutor. Explain the following concept clearly.` }] }
+                    })
+                });
+
+                if (!response.ok) throw new Error('API 请求失败');
+                
+                const result = await response.json();
+                const text = result.candidates[0]?.content?.parts?.[0]?.text;
+
+                if (text) {
+                    document.getElementById('ai-result-text').innerHTML = text;
+                } else {
+                    throw new Error('API 返回内容为空');
+                }
+
+            } catch (error) {
+                document.getElementById('ai-error').textContent = '发生错误，请稍后再试。';
+                document.getElementById('ai-error').style.display = 'block';
+            } finally {
+                document.getElementById('ai-submit-btn').disabled = false;
+                document.getElementById('ai-loading').style.display = 'none';
+                document.getElementById('ai-result-container').style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>
+
 
         <!-- 学习笔记 (Notes) -->
         <section id="notes" class="page-section">
@@ -628,133 +754,9 @@
             });
         }
 
-        // ✨ [新增] 获取当前激活的学科名称（用于 AI 上下文）
-        function getActiveSubject() {
-            const activeBtn = document.querySelector('.subject-tab-btn.bg-blue-600');
-            if (activeBtn) {
-                const subjectId = activeBtn.getAttribute('data-subject-tab');
-                const key = `subject.${subjectId}`;
-                if (translations[currentLang] && translations[currentLang][key]) {
-                    return translations[currentLang][key]; // 返回 "数学", "Physics" 等
-                }
-            }
-            return translations[currentLang]['ai.general_science'] || 'science'; // 降级处理
-        }
-
-        // ✨ [新增] 处理 AI 提问
-import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({});
-
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-3-pro-preview",
-    contents: "Explain how AI works in a few words",
-  });
-  console.log(response.text);
-}
-
-await main();
-
-            // 1. 设置加载状态
-            submitBtn.disabled = true;
-            resultContainer.style.display = 'block';
-            loadingEl.style.display = 'block';
-            resultTextEl.innerHTML = '';
-            errorEl.style.display = 'none';
-            // 更新加载文本的语言
-            loadingEl.querySelector('p').textContent = translations[currentLang]['ai.loading'];
 
 
-            try {
-                // 2. 准备 API 请求
-                const activeSubject = getActiveSubject(); // 获取当前学科上下文
-                const responseLang = currentLang === 'cn' ? '中文' : 'English';
-                const systemPrompt = `You are a helpful science tutor. Explain the following concept clearly and concisely, as if to a high school or early college student. The user is currently studying ${activeSubject}. Respond in ${responseLang}.`;
-                
-                const apiKey = "AIzaSyArzbmAPfYzLpvxY7yQoT_pXvt88w46HDg"; // API 密钥保持为空
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-
-                const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
-                    },
-                };
-                
-                // 3. 发送请求，带指数退避 (Exponential Backoff)
-                const MAX_RETRIES = 5;
-                let response = null;
-                for (let i = 0; i < MAX_RETRIES; i++) {
-                    try {
-                        response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-
-                        if (response.status !== 429 && response.ok) {
-                            break; // 成功或非限流错误，退出重试
-                        }
-                        
-                        if (response.status === 429 && i < MAX_RETRIES - 1) {
-                            const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
-                            await new Promise(resolve => setTimeout(resolve, delay));
-                        } else {
-                            throw new Error(`API Error: ${response.status} ${response.statusText}`);
-                        }
-                    } catch (err) {
-                        if (i === MAX_RETRIES - 1) throw err;
-                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                    }
-                }
-                
-                if (!response || !response.ok) {
-                     throw new Error("Failed to fetch response after multiple retries.");
-                }
-
-                const result = await response.json();
-
-                // 4. 处理并显示结果
-                if (result.candidates && result.candidates[0].content?.parts?.[0]?.text) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    // 使用 Markdown 格式化（例如将 **粗体** 转换为 <strong> 标签）
-                    let formattedText = text
-                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/\*(.*?)\*/g, '<em>$1</em>');
-                    
-                    // 将换行符转换为段落或换行
-                    formattedText = formattedText.split('\n').map(line => {
-                        if (line.trim().startsWith('- ') || line.trim().startsWith('* ')) {
-                            return `<li>${line.substring(2).trim()}</li>`;
-                        }
-                        return line.trim() === '' ? '' : `<p>${line.trim()}</p>`;
-                    }).join('');
-
-                    // 处理列表（如果需要）
-                    if (formattedText.includes('<li>')) {
-                        formattedText = `<ul>${formattedText}</ul>`;
-                    }
-
-
-                    resultTextEl.innerHTML = formattedText; 
-                } else {
-                    throw new Error("Invalid response structure from API.");
-                }
-
-            } catch (error) {
-                console.error("Error calling Gemini API:", error);
-                errorEl.textContent = translations[currentLang]['ai.error'];
-                errorEl.style.display = 'block';
-                resultTextEl.innerHTML = ''; // 清空可能存在的部分结果
-            } finally {
-                // 5. 移除加载状态
-                submitBtn.disabled = false;
-                loadingEl.style.display = 'none';
-            }
-        }
-
+       
 
         // DOM 加载完成后执行
         document.addEventListener('DOMContentLoaded', () => {
@@ -819,9 +821,7 @@ await main();
             // 7. 页面初始加载时处理
             handleHashChange();
 
-            // 8. ✨ [新增] 为 AI 提交按钮添加事件监听
-            document.getElementById('ai-submit-btn').addEventListener('click', handleAiSubmit);
-
+           
             // 9. 允许在输入框中按 Enter 提交
              aiPromptInput.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') {
