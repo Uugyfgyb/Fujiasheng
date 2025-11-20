@@ -401,7 +401,7 @@
                 "home.subtitle": "Explore the cosmos of logic, laws, matter, and life.",
                 "home.subjects_title": "Choose Your Sector",
                 "home.intro_title": "Captain's Log",
-                "home.intro_content": "Welcome aboard! I am the pilot of this knowledge starship. Passionate about decoding the universe's equations—from the infinite mysteries of calculus to the microscopic dance of chemical bonds. No rote memorization here, only the endless pursuit of truth. Let's warp into the unknown!",
+                "home.intro_content": "Welcome aboard! I am the ”pilot：Jiasheng Fu Felix“ of this knowledge starship. Passionate about decoding the universe's equations—from the infinite mysteries of calculus to the microscopic dance of chemical bonds. No rote memorization here, only the endless pursuit of truth. Let's warp into the unknown!",
                 "subject.math": "Mathematics",
                 "subject.math_desc": "Star charts of logic & numbers.",
                 "subject.physics": "Physics",
@@ -459,7 +459,7 @@
                 "home.subtitle": "探索数学的逻辑星云，穿越物理的法则虫洞，解构化学的元素矩阵，见证生物的生命奇迹。",
                 "home.subjects_title": "选择探索象限",
                 "home.intro_title": "舰长简介",
-                "home.intro_content": "欢迎登舰！我是这艘知识飞船的驾驶员。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！",
+                "home.intro_content": "欢迎登舰！我是这艘知识飞船的驾驶员：付嘉圣 Felix。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！",
                 "subject.math": "数学",
                 "subject.math_desc": "逻辑与数字的星图。",
                 "subject.physics": "物理",
@@ -479,6 +479,12 @@
                 "subjects.physics_t1": "牛顿力学 (Newtonian Mechanics)",
                 "subjects.physics_t2": "电磁学 (Electromagnetism)",
                 "subjects.physics_t3": "相对论 (Relativity)",
+                <a 
+  href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad3306841aea536b76cb6f92/group-theory-chap7.pdf"
+  download="群论第7章.pdf"
+>
+  点击下载 群论 (group-theory) 第七章 PDF
+</a>
                 "subjects.chemistry_detail": "化学是研究物质及其变化的中心科学。内容涵盖原子结构、化学键、热化学和有机化学。",
                 "subjects.chem_t1": "有机化学 (Organic Chemistry)",
                 "subjects.chem_t2": "化学反应动力学 (Kinetics)",
