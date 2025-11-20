@@ -110,9 +110,9 @@
         <!-- 首页 (Home) -->
         <section id="home" class="page-section active">
             <!-- 欢迎横幅 -->
-            <div class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-10 sm:p-16 rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div class="relative bg-gradient-to-r from-pink-600 to-indigo-700 text-blue p-10 sm:p-16 rounded-2xl shadow-xl overflow-hidden mb-12">
                 <div class="relative z-10">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4" data-lang-key="home.title">欢迎来到我的理科空间</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4" data-lang-key="home.title">欢迎来到我的自由理科空间</h1>
                     <p class="text-xl md:text-2xl" data-lang-key="home.subtitle">探索、学习、分享：我的数学、物理、化学与生物之旅。</p>
                 </div>
                 <!-- 装饰性 SVG -->
@@ -210,7 +210,15 @@
 >
   点击下载 GT.pdf 文件
 </a>
+                         <a 
+  href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/1d5a1b1d1f8d14f1ad3306841aea536b76cb6f92/group-theory-chap7.pdf"
+  download="群论第7章.pdf"
+>
+  点击下载 群论 (group-theory) 第七章 PDF
+</a>
+
                         <li data-lang-key="subjects.physics_t2">电磁学 (Electromagnetism)</li>
+                        
                         <li data-lang-key="subjects.physics_t3">相对论 (Relativity)</li>
                     </ul>
                 </div>
@@ -434,7 +442,7 @@
                 "resources.r5_desc": "A premier educational YouTube channel that explains various subjects with engaging animations.",
                 "resources.r6_title": "MIT OpenCourseWare",
                 "resources.r6_desc": "MIT's open-access course materials, offering a vast amount of university-level science resources.",
-                "footer.text": "© 2025 [Your Name]. All rights reserved.",
+                "footer.text": "© 2025 [Jiasheng Fu]. All rights reserved.",
                 "ai.title": "AI Concept Explainer",
                 "ai.desc": "Confused about a science concept? Ask the AI!",
                 "ai.placeholder": "Enter a science concept (e.g., Newton's Second Law)",
@@ -465,7 +473,6 @@
                 "about.title": "关于我",
                 "about.p1": "你好！我是一名热衷于理科学习的学生。我对解开复杂的数学难题、理解宇宙的物理规律、探索物质的化学反应以及研究奇妙的生命现象充满热情。",
                 "about.p2": "创建这个网站的目的是为了系统地整理我的学习笔记、分享有用的资源，并记录我在理科学习道路上的成长与思考。我相信，分享是最好的学习方式。",
-                "about.p3": "我的目标是 [在这里写下你的目标，例如：进入某某大学学习，或在某个科学竞赛中获奖]。希望这个网站也能对你有所启发！",
                 "subjects.title": "学科详情",
                 "subjects.desc": "在这里，我将深入探讨每个学科。选择一个学科开始探索：",
                 "subjects.topics": "重点主题：",
@@ -497,7 +504,7 @@
                 "resources.desc": "一些我发现非常有帮助的网站、工具和频道。",
                 "resources.r1_title": "可汗学院 (Khan Academy)",
                 "resources.r1_desc": "非常棒的免费学习平台，涵盖了从基础数学到高等物理的各种课程。",
-                "resources.link": "访问网站 &rarr;",
+                "resources.link": "访问网站 ",
                 "resources.r2_title": "3Blue1Brown",
                 "resources.r2_desc": "一个专注于数学可视化的 YouTube 频道，能让你直观地理解复杂的数学概念。",
                 "resources.r3_title": "WolframAlpha",
@@ -508,7 +515,7 @@
                 "resources.r5_desc": "YouTube 上的一个王牌科普频道，用生动的动画快速讲解各种学科知识。",
                 "resources.r6_title": "MIT OpenCourseWare",
                 "resources.r6_desc": "麻省理工学院的开放课程，提供了大量的大学级别理科课程资料。",
-                "footer.text": "© 2025 [你的名字]. 保留所有权利。",
+                "footer.text": "© 2025 [Jiasheng Fu]. 保留所有权利。",
                 "ai.title": "AI 概念解析",
                 "ai.desc": "对某个理科概念感到困惑吗？问问 AI 吧！",
                 "ai.placeholder": "输入一个理科概念 (如：牛顿第二定律)",
