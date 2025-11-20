@@ -136,6 +136,13 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #475569; 
         }
+
+        /* 资源面板滚动区 */
+        .resource-scroll-area {
+            max-height: 800px; /* 限制高度以允许滚动 */
+            overflow-y: auto;
+            padding-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -230,7 +237,7 @@
                                 <h3 class="text-lg font-semibold text-cyan-200" data-lang-key="home.intro_title">舰长简介</h3>
                             </div>
                             <p class="text-gray-300 text-sm leading-relaxed" data-lang-key="home.intro_content">
-                                欢迎登舰！我是这艘知识飞船的驾驶员付嘉圣。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！
+                                <!-- 内容将由 JS 填充 -->
                             </p>
                         </div>
                     </div>
@@ -437,7 +444,7 @@
                                 </li>
                                 <li class="sub-topic-item">
                                     <span data-lang-key="phy.t3.s2">广义相对论 (General Relativity)</span>
-                                    <a href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/3caa37efbff3199367cf48ef025c05987a5edb75/AtomicPhysics.pdf" class="file-link-placeholder" title="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/3caa37efbff3199367cf48ef025c05987a5edb75/AtomicPhysics.pdf">[📄 资料]</a>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
                                 </li>
                                 <li class="sub-topic-item">
                                     <span data-lang-key="phy.t3.s3">黑洞物理 (Black Holes)</span>
@@ -559,7 +566,7 @@
                             <ul class="sub-topic-list">
                                 <li class="sub-topic-item">
                                     <span data-lang-key="bio.t2.s1">细胞器功能 (Organelles)</span>
-                                    <a href="#" class="file-link-placeholder" title="href="">[📄 资料]</a>
+                                    <a href="#" class="file-link-placeholder" title="Add File Link">[📄 资料]</a>
                                 </li>
                                 <li class="sub-topic-item">
                                     <span data-lang-key="bio.t2.s2">膜运输 (Membrane Transport)</span>
@@ -636,32 +643,15 @@
 
         </section>
 
-        <!-- 学习资源 (Resources) -->
+        <!-- 学习资源 (Resources) - 更新为可滚动的面板 -->
         <section id="resources" class="page-section glass-card p-8 rounded-xl">
             <h2 class="text-3xl font-bold mb-6 text-white" data-lang-key="resources.title">星际资源库</h2>
             <p class="text-lg text-gray-300 mb-8" data-lang-key="resources.desc">精选的高质量学习信标，指引你的探索之路。</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- 资源项 -->
-                <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
-                    <h3 class="text-xl font-semibold text-cyan-300 mb-2" data-lang-key="resources.r1_title">可汗学院 (Khan Academy)</h3>
-                    <p class="text-gray-400 text-sm mb-3" data-lang-key="resources.r1_desc">全学科覆盖的免费知识宝库。</p>
-                    <a href="https://www.khanacademy.org/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门</a>
-                </div>
-                 <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
-                    <h3 class="text-xl font-semibold text-cyan-300 mb-2" data-lang-key="resources.r2_title">3Blue1Brown</h3>
-                    <p class="text-gray-400 text-sm mb-3" data-lang-key="resources.r2_desc">用唯美的可视化动画展示数学之美。</p>
-                    <a href="https://www.youtube.com/c/3blue1brown" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门</a>
-                </div>
-                 <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
-                    <h3 class="text-xl font-semibold text-cyan-300 mb-2" data-lang-key="resources.r3_title">WolframAlpha</h3>
-                    <p class="text-gray-400 text-sm mb-3" data-lang-key="resources.r3_desc">强大的计算知识引擎，科学家的外脑。</p>
-                    <a href="https://www.wolframalpha.com/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门</a>
-                </div>
-                 <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
-                    <h3 class="text-xl font-semibold text-cyan-300 mb-2" data-lang-key="resources.r4_title">PhET 互动模拟</h3>
-                    <p class="text-gray-400 text-sm mb-3" data-lang-key="resources.r4_desc">直观的物理与化学沙盒模拟。</p>
-                    <a href="https://phet.colorado.edu/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center" data-lang-key="resources.link">开启传送门</a>
+            <!-- 滚动容器 -->
+            <div class="resource-scroll-area custom-scrollbar">
+                <div id="resource-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 资源项将由 JS 动态生成 -->
                 </div>
             </div>
         </section>
@@ -675,6 +665,70 @@
 
     <!-- JavaScript 脚本 -->
     <script>
+        // 资源数据
+        const resourceData = [
+            // --- 已有经典 ---
+            { title: "Khan Academy", desc: "Comprehensive K-12 science & math.", desc_cn: "全学科覆盖的免费知识宝库。", type: "web", link: "https://www.khanacademy.org/" },
+            { title: "3Blue1Brown", desc: "Visualizing math beauty.", desc_cn: "用唯美的可视化动画展示数学之美。", type: "web", link: "https://www.youtube.com/c/3blue1brown" },
+            { title: "WolframAlpha", desc: "Computational intelligence.", desc_cn: "强大的计算知识引擎，科学家的外脑。", type: "web", link: "https://www.wolframalpha.com/" },
+            { title: "PhET Simulations", desc: "Interactive science sims.", desc_cn: "直观的物理与化学沙盒模拟。", type: "web", link: "https://phet.colorado.edu/" },
+            
+            // --- 顶级期刊/新闻 ---
+            { title: "Nature", desc: "Leading international science journal.", desc_cn: "国际顶级科学期刊。", type: "web", link: "https://www.nature.com/" },
+            { title: "Science Magazine", desc: "Breaking science news.", desc_cn: "前沿科学新闻与研究。", type: "web", link: "https://www.science.org/" },
+            { title: "Scientific American", desc: "Science for everyone.", desc_cn: "科普界的常青树。", type: "web", link: "https://www.scientificamerican.com/" },
+            { title: "NASA", desc: "Space exploration updates.", desc_cn: "宇宙探索的最新前沿。", type: "web", link: "https://www.nasa.gov/" },
+            { title: "National Geographic", desc: "Earth & environment.", desc_cn: "地理与环境的视觉盛宴。", type: "web", link: "https://www.nationalgeographic.com/" },
+            
+            // --- 学习平台/课程 ---
+            { title: "MIT OpenCourseWare", desc: "Free MIT course materials.", desc_cn: "麻省理工学院开放课程。", type: "web", link: "https://ocw.mit.edu/" },
+            { title: "Coursera", desc: "Degrees from top unis.", desc_cn: "来自顶尖大学的在线课程。", type: "web", link: "https://www.coursera.org/" },
+            { title: "edX", desc: "Courses from Harvard & MIT.", desc_cn: "哈佛与MIT联手的课程平台。", type: "web", link: "https://www.edx.org/" },
+            { title: "Stanford Online", desc: "Stanford learning.", desc_cn: "斯坦福大学在线资源。", type: "web", link: "https://online.stanford.edu/" },
+            { title: "Harvard Online", desc: "Harvard courses.", desc_cn: "哈佛大学在线课程。", type: "web", link: "https://pll.harvard.edu/" },
+            
+            // --- 核心知识 PDF 下载 (模拟链接) ---
+            { title: "Calculus Cheat Sheet", desc: "Derivatives & Integrals.", desc_cn: "微积分速查表 (导数与积分)。", type: "pdf", link: "#" },
+            { title: "Physics Constants", desc: "Fundamental constants.", desc_cn: "物理常数表 (光速, 普朗克常数)。", type: "pdf", link: "#" },
+            { title: "Periodic Table HD", desc: "High-res printable.", desc_cn: "高清元素周期表。", type: "pdf", link: "#" },
+            { title: "Amino Acids Chart", desc: "Structures & properties.", desc_cn: "氨基酸结构与性质表。", type: "pdf", link: "#" },
+            { title: "Standard Model", desc: "Fundamental particles.", desc_cn: "粒子物理标准模型图。", type: "pdf", link: "#" },
+            { title: "Trig Identities", desc: "Sin, Cos, Tan rules.", desc_cn: "三角函数恒等式大全。", type: "pdf", link: "#" },
+            { title: "Organic Reactions", desc: "Reaction map.", desc_cn: "有机化学反应路线图。", type: "pdf", link: "#" },
+            { title: "Maxwell's Equations", desc: "Electromagnetism core.", desc_cn: "麦克斯韦方程组详解。", type: "pdf", link: "#" },
+            { title: "Metabolic Pathways", desc: "Cellular respiration.", desc_cn: "细胞代谢通路图。", type: "pdf", link: "#" },
+            { title: "SI Units", desc: "International system.", desc_cn: "国际单位制换算表。", type: "pdf", link: "#" },
+
+            // --- 实用工具 ---
+            { title: "Desmos", desc: "Graphing calculator.", desc_cn: "超好用的在线绘图计算器。", type: "web", link: "https://www.desmos.com/" },
+            { title: "GeoGebra", desc: "Dynamic mathematics.", desc_cn: "动态几何与代数工具。", type: "web", link: "https://www.geogebra.org/" },
+            { title: "Ptable", desc: "Dynamic periodic table.", desc_cn: "动态交互式元素周期表。", type: "web", link: "https://ptable.com/" },
+            { title: "MolView", desc: "Open source molecule viewer.", desc_cn: "开源分子结构查看器。", type: "web", link: "https://molview.org/" },
+            { title: "Overleaf", desc: "Online LaTeX editor.", desc_cn: "在线 LaTeX 论文编辑器。", type: "web", link: "https://www.overleaf.com/" },
+            
+            // --- 学术搜索/数据库 ---
+            { title: "arXiv", desc: "Open access e-prints.", desc_cn: "物理与数学预印本库。", type: "web", link: "https://arxiv.org/" },
+            { title: "PubMed", desc: "Biomedical literature.", desc_cn: "生物医学文献数据库。", type: "web", link: "https://pubmed.ncbi.nlm.nih.gov/" },
+            { title: "Google Scholar", desc: "Scholarly search.", desc_cn: "谷歌学术搜索。", type: "web", link: "https://scholar.google.com/" },
+            { title: "MathWorld", desc: "Math encyclopedia.", desc_cn: "Wolfram 数学百科全书。", type: "web", link: "https://mathworld.wolfram.com/" },
+            { title: "HyperPhysics", desc: "Physics concepts map.", desc_cn: "物理概念导图百科。", type: "web", link: "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" },
+            
+            // --- 天文与模拟 ---
+            { title: "Stellarium", desc: "Virtual planetarium.", desc_cn: "虚拟天文馆星图。", type: "web", link: "https://stellarium-web.org/" },
+            { title: "SpaceX", desc: "Future of space.", desc_cn: "SpaceX 发射与星舰动态。", type: "web", link: "https://www.spacex.com/" },
+            { title: "CERN", desc: "Particle physics.", desc_cn: "欧洲核子研究中心。", type: "web", link: "https://home.cern/" },
+            { title: "Algodoo", desc: "2D physics sandbox.", desc_cn: "2D 物理沙盒模拟器。", type: "web", link: "http://www.algodoo.com/" },
+            { title: "Hubble Site", desc: "Hubble images.", desc_cn: "哈勃望远镜影像库。", type: "web", link: "https://hubblesite.org/" },
+            
+            // --- 更多 PDF 补充 ---
+            { title: "Linear Algebra Map", desc: "Concept connections.", desc_cn: "线性代数概念图谱。", type: "pdf", link: "#" },
+            { title: "Genetics Glossary", desc: "Key terms.", desc_cn: "遗传学术语表。", type: "pdf", link: "#" },
+            { title: "Thermodynamics", desc: "Laws & formulas.", desc_cn: "热力学定律速查。", type: "pdf", link: "#" },
+            { title: "Quantum Intro", desc: "Basic concepts.", desc_cn: "量子力学入门手册。", type: "pdf", link: "#" },
+            { title: "Cell Structure", desc: "Diagrams.", desc_cn: "细胞结构精细图解。", type: "pdf", link: "#" },
+            { title: "Lab Safety", desc: "Guidelines.", desc_cn: "实验室安全指南。", type: "pdf", link: "#" }
+        ];
+
         // 语言翻译数据
         const translations = {
             en: {
@@ -687,7 +741,7 @@
                 "home.subtitle": "Explore the cosmos of logic, laws, matter, and life.",
                 "home.subjects_title": "Choose Your Sector",
                 "home.intro_title": "Captain's Log",
-                "home.intro_content": "Welcome aboard! I am the pilot Felix of this knowledge starship. Passionate about decoding the universe's equations—from the infinite mysteries of calculus to the microscopic dance of chemical bonds. No rote memorization here, only the endless pursuit of truth. Let's warp into the unknown!",
+                "home.intro_content": "Welcome aboard! I am the pilot of this knowledge starship, Jiasheng Fu Felix. Passionate about decoding the universe's equations—from the infinite mysteries of calculus to the microscopic dance of chemical bonds. No rote memorization here, only the endless pursuit of truth. Let's warp into the unknown!",
                 "subject.math": "Mathematics",
                 "subject.math_desc": "Star charts of logic & numbers.",
                 "subject.physics": "Physics",
@@ -717,15 +771,8 @@
                 "subjects.bio_t3": "Evolution",
                 "resources.title": "Galactic Library",
                 "resources.desc": "High-quality beacons to guide your exploration.",
-                "resources.r1_title": "Khan Academy",
-                "resources.r1_desc": "A free treasure trove of knowledge.",
-                "resources.link": "Open Portal &rarr;",
-                "resources.r2_title": "3Blue1Brown",
-                "resources.r2_desc": "Beautiful mathematical visualizations.",
-                "resources.r3_title": "WolframAlpha",
-                "resources.r3_desc": "Computational knowledge engine.",
-                "resources.r4_title": "PhET Simulations",
-                "resources.r4_desc": "Interactive science sandbox.",
+                "resources.link": "Open Portal",
+                "resources.pdf_link": "Download Data",
                 "ai.title": "AI Quantum Analysis",
                 "ai.desc": "Confused? Connect to the neural network for instant answers.",
                 "ai.placeholder": "Enter concept (e.g., Quantum Entanglement)",
@@ -734,7 +781,7 @@
                 "ai.error": "Signal lost. Please retry.",
                 "ai.general_science": "General Science",
                 "footer.text": "© 2025 Quantum Learning Hub. All rights reserved.",
-                // New Translations
+                // New Translations for Subtopics
                 "math.t1.s1": "Limits & Continuity",
                 "math.t1.s2": "Applications of Derivatives",
                 "math.t1.s3": "Integrals & Antiderivatives",
@@ -782,7 +829,7 @@
                 "home.subtitle": "探索数学的逻辑星云，穿越物理的法则虫洞，解构化学的元素矩阵，见证生物的生命奇迹。",
                 "home.subjects_title": "选择探索象限",
                 "home.intro_title": "舰长简介",
-                "home.intro_content": "欢迎登舰！我是这艘知识飞船的驾驶员Felix付嘉圣。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！",
+                "home.intro_content": "欢迎登舰！我是这艘知识飞船的驾驶员——付嘉圣。我热衷于解开宇宙的方程，无论是微积分的无限奥秘，还是化学键的微观舞蹈。这里没有枯燥的死记硬背，只有对真理的无尽探索。让我们一起向着未知的知识疆域进发！",
                 "subject.math": "数学",
                 "subject.math_desc": "逻辑与数字的星图。",
                 "subject.physics": "物理",
@@ -812,15 +859,8 @@
                 "subjects.bio_t3": "进化论 (Evolution)",
                 "resources.title": "星际资源库",
                 "resources.desc": "精选的高质量学习信标，指引你的探索之路。",
-                "resources.r1_title": "可汗学院 (Khan Academy)",
-                "resources.r1_desc": "全学科覆盖的免费知识宝库。",
-                "resources.link": "开启传送门 ",
-                "resources.r2_title": "3Blue1Brown",
-                "resources.r2_desc": "用唯美的可视化动画展示数学之美。",
-                "resources.r3_title": "WolframAlpha",
-                "resources.r3_desc": "强大的计算知识引擎，科学家的外脑。",
-                "resources.r4_title": "PhET 互动模拟",
-                "resources.r4_desc": "直观的物理与化学沙盒模拟。",
+                "resources.link": "开启传送门",
+                "resources.pdf_link": "下载数据晶体",
                 "ai.title": "AI 量子解析",
                 "ai.desc": "对某个理科概念感到困惑吗？接入 AI 神经网络获取即时解答！",
                 "ai.placeholder": "输入概念 (如：量子纠缠, 熵增定律)",
@@ -829,7 +869,7 @@
                 "ai.error": "信号丢失，请重试。",
                 "ai.general_science": "综合理科",
                 "footer.text": "© 2025 Quantum Learning Hub. All rights reserved.",
-                // New Translations
+                // Subtopic Translations
                 "math.t1.s1": "极限与连续 (Limits)",
                 "math.t1.s2": "导数应用 (Derivatives)",
                 "math.t1.s3": "定积分与不定积分 (Integrals)",
@@ -895,6 +935,45 @@
              if (loadingEl.style.display !== 'none') {
                 loadingEl.querySelector('p').textContent = translations[lang]['ai.loading'];
              }
+             
+             // Re-render resources to update language
+             renderResources();
+        }
+
+        // 渲染资源列表
+        function renderResources() {
+            const container = document.getElementById('resource-grid');
+            container.innerHTML = '';
+            
+            const linkTextKey = 'resources.link';
+            const pdfTextKey = 'resources.pdf_link';
+            const linkText = translations[currentLang][linkTextKey];
+            const pdfText = translations[currentLang][pdfTextKey];
+
+            resourceData.forEach(item => {
+                const title = item.title; // Titles are English in JS data for simplicity, or could be bilingual
+                const desc = currentLang === 'cn' && item.desc_cn ? item.desc_cn : item.desc;
+                const isPdf = item.type === 'pdf';
+                const actionText = isPdf ? pdfText : linkText;
+                const actionColor = isPdf ? 'text-emerald-400 hover:text-emerald-300' : 'text-blue-400 hover:text-blue-300';
+                const icon = isPdf ? '📄' : '🔗';
+
+                const cardHTML = `
+                    <div class="p-4 rounded-lg bg-slate-800/50 border border-slate-700 hover:bg-slate-800 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-semibold text-cyan-300 mb-1">${title}</h3>
+                                <p class="text-gray-400 text-xs mb-3">${desc}</p>
+                            </div>
+                            <span class="text-lg opacity-50">${icon}</span>
+                        </div>
+                        <a href="${item.link}" target="_blank" class="${actionColor} text-sm flex items-center font-medium">
+                            ${actionText}
+                        </a>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', cardHTML);
+            });
         }
 
         function showPage(pageId) {
@@ -976,7 +1055,7 @@
                 const systemPrompt = `You are a futuristic science guide. Explain the concept clearly and concisely, suitable for a student exploring the universe of knowledge. Context: ${activeSubject}. Respond in ${responseLang} using Markdown.`;
                 
                 const apiKey = ""; // Keep empty
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key={AIzaSyArzbmAPfYzLpvxY7yQoT_pXvt88w46HDg};
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
                 const payload = {
                     contents: [{ parts: [{ text: userQuery }] }],
@@ -1092,6 +1171,9 @@
                     handleAiSubmit();
                 }
             });
+            
+            // Initial render of resources
+            renderResources();
         });
     </script>
 </body>
