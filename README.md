@@ -220,6 +220,14 @@
                         <li data-lang-key="subjects.physics_t2">电磁学 (Electromagnetism)</li>
                         
                         <li data-lang-key="subjects.physics_t3">相对论 (Relativity)</li>
+
+                        <li data-lang-key="subjects.physics_t4>原子粒子物理 (Atomic)</li>
+                        <a 
+  href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/3caa37efbff3199367cf48ef025c05987a5edb75/AtomicPhysics.pdf"
+  download="AtomicPhysics.pdf"
+>
+  点击下载 原子物理学 (Atomic Physics) PDF
+</a>
                     </ul>
                 </div>
                 <!-- 化学内容 -->
