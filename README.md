@@ -491,7 +491,7 @@
                 "resources.desc": "精选的高质量学习信标，指引你的探索之路。",
                 "resources.r1_title": "可汗学院 (Khan Academy)",
                 "resources.r1_desc": "全学科覆盖的免费知识宝库。",
-                "resources.link": "开启传送门 &rarr;",
+                "resources.link": "开启传送门",
                 "resources.r2_title": "3Blue1Brown",
                 "resources.r2_desc": "用唯美的可视化动画展示数学之美。",
                 "resources.r3_title": "WolframAlpha",
@@ -615,7 +615,7 @@
                 const responseLang = currentLang === 'cn' ? '中文' : 'English';
                 const systemPrompt = `You are a futuristic science guide. Explain the concept clearly and concisely, suitable for a student exploring the universe of knowledge. Context: ${activeSubject}. Respond in ${responseLang} using Markdown.`;
                 
-                const apiKey = ""; // Keep empty
+                const apiKey = "AIzaSyArzbmAPfYzLpvxY7yQoT_pXvt88w46HDg"; //
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
                 const payload = {
