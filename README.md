@@ -642,16 +642,7 @@
         }
 
         // ✨ [新增] 处理 AI 提问
-        async function handleAiSubmit() {
-            const promptInput = document.getElementById('ai-prompt');
-            const submitBtn = document.getElementById('ai-submit-btn');
-            const resultContainer = document.getElementById('ai-result-container');
-            const loadingEl = document.getElementById('ai-loading');
-            const resultTextEl = document.getElementById('ai-result-text');
-            const errorEl = document.getElementById('ai-error');
-
-            const userQuery = promptInput.value.trim();
-            import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({});
 
@@ -664,9 +655,6 @@ async function main() {
 }
 
 await main();
-            if (!userQuery) {
-                return; // 如果输入为空则不执行
-            }
 
             // 1. 设置加载状态
             submitBtn.disabled = true;
