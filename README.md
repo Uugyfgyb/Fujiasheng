@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+欢迎付骏怡登舰！
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
