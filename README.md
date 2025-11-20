@@ -1,5 +1,4 @@
 欢迎付骏怡登舰！
-<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -438,7 +437,7 @@
                                 </li>
                                 <li class="sub-topic-item">
                                     <span data-lang-key="phy.t3.s2">广义相对论 (General Relativity)</span>
-                                    <a href="#" class="file-link-placeholder" title="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/3caa37efbff3199367cf48ef025c05987a5edb75/AtomicPhysics.pdf">[📄 资料]</a>
+                                    <a href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/3caa37efbff3199367cf48ef025c05987a5edb75/AtomicPhysics.pdf" class="file-link-placeholder" title="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/3caa37efbff3199367cf48ef025c05987a5edb75/AtomicPhysics.pdf">[📄 资料]</a>
                                 </li>
                                 <li class="sub-topic-item">
                                     <span data-lang-key="phy.t3.s3">黑洞物理 (Black Holes)</span>
@@ -815,7 +814,7 @@
                 "resources.desc": "精选的高质量学习信标，指引你的探索之路。",
                 "resources.r1_title": "可汗学院 (Khan Academy)",
                 "resources.r1_desc": "全学科覆盖的免费知识宝库。",
-                "resources.link": "开启传送门 &rarr;",
+                "resources.link": "开启传送门 ",
                 "resources.r2_title": "3Blue1Brown",
                 "resources.r2_desc": "用唯美的可视化动画展示数学之美。",
                 "resources.r3_title": "WolframAlpha",
@@ -977,7 +976,7 @@
                 const systemPrompt = `You are a futuristic science guide. Explain the concept clearly and concisely, suitable for a student exploring the universe of knowledge. Context: ${activeSubject}. Respond in ${responseLang} using Markdown.`;
                 
                 const apiKey = ""; // Keep empty
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${AIzaSyArzbmAPfYzLpvxY7yQoT_pXvt88w46HDg}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key={AIzaSyArzbmAPfYzLpvxY7yQoT_pXvt88w46HDg};
 
                 const payload = {
                     contents: [{ parts: [{ text: userQuery }] }],
