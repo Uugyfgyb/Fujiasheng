@@ -1,6 +1,6 @@
 欢迎付骏怡登舰！
 <html lang="en" class="scroll-smooth">
-<!-- Google tag (gtag.js) -->
+<head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E9KNYG7D1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,7 +9,6 @@
 
   gtag('config', 'G-3E9KNYG7D1');
 </script>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-lang-key="head.title">Student Science Hub | 理科学习空间</title>
