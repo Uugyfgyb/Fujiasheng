@@ -1,8 +1,7 @@
 欢迎付骏怡登舰！
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta name="google-site-verification" content="nvR5HccczyAA8jNXLNqO3pslMFm8AWp1JCqGeqW3R-k" />
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E9KNYG7D1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
