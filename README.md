@@ -1054,7 +1054,7 @@
                 const responseLang = currentLang === 'cn' ? '中文' : 'English';
                 const systemPrompt = `You are a futuristic science guide. Explain the concept clearly and concisely, suitable for a student exploring the universe of knowledge. Context: ${activeSubject}. Respond in ${responseLang} using Markdown.`;
                 
-                const apiKey = ""; // Keep empty
+                const apiKey = "AIzaSyArzbmAPfYzLpvxY7yQoT_pXvt88w46HDg"; // Keep empty
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
                 const payload = {
