@@ -53,7 +53,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-200 text-gray-800">
 
     <!-- 导航栏 -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
@@ -651,6 +651,19 @@
             const errorEl = document.getElementById('ai-error');
 
             const userQuery = promptInput.value.trim();
+            import { GoogleGenAI } from "@google/genai";
+
+const ai = new GoogleGenAI({});
+
+async function main() {
+  const response = await ai.models.generateContent({
+    model: "gemini-3-pro-preview",
+    contents: "Explain how AI works in a few words",
+  });
+  console.log(response.text);
+}
+
+await main();
             if (!userQuery) {
                 return; // 如果输入为空则不执行
             }
@@ -671,7 +684,7 @@
                 const responseLang = currentLang === 'cn' ? '中文' : 'English';
                 const systemPrompt = `You are a helpful science tutor. Explain the following concept clearly and concisely, as if to a high school or early college student. The user is currently studying ${activeSubject}. Respond in ${responseLang}.`;
                 
-                const apiKey = ""; // API 密钥保持为空
+                const apiKey = "AIzaSyArzbmAPfYzLpvxY7yQoT_pXvt88w46HDg"; // API 密钥保持为空
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
                 const payload = {
