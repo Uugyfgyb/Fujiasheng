@@ -19,6 +19,7 @@
     <!-- 引入 Inter 字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+    <meta name="google-site-verification" content="nvR5HccczyAA8jNXLNqO3pslMFm8AWp1JCqGeqW3R-k" />
         /* 全局样式 */
         body {
             font-family: 'Inter', 'Noto Sans SC', sans-serif;
