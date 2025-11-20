@@ -1,5 +1,4 @@
-我爱付军医
-<!DOCTYPE html>
+我爱付骏怡
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -165,9 +164,9 @@
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <img src="https://placehold.co/200x200/E2E8F0/3B82F6?text=Me" alt="[个人头像]" class="w-48 h-48 rounded-full shadow-md object-cover flex-shrink-0">
                 <div class="text-lg text-gray-700 space-y-4">
-                    <p data-lang-key="about.p1">你好！我是一名热衷于理科学习的学生。我对解开复杂的数学难题、理解宇宙的物理规律、探索物质的化学反应以及研究奇妙的生命现象充满热情。</p>
+                    <p data-lang-key="about.p1">你好！我是一名热衷于理科学习的学生。我对解开复杂的数学难题、理解宇宙的物理规律、探索物质的奥秘充满热情。</p>
                     <p data-lang-key="about.p2">创建这个网站的目的是为了系统地整理我的学习笔记、分享有用的资源，并记录我在理科学习道路上的成长与思考。我相信，分享是最好的学习方式。</p>
-                    <p data-lang-key="about.p3">我的目标是 [在这里写下你的目标，例如：进入某某大学学习，或在某个科学竞赛中获奖]。希望这个网站也能对你有所启发！</p>
+                    <p data-lang-key="about.p3">希望这个网站也能对你有所启发！</p>
                 </div>
             </div>
         </section>
@@ -204,7 +203,13 @@
                     <p class="text-gray-700 mb-4" data-lang-key="subjects.physics_detail">物理学探索宇宙的基本原理。这里有关于经典力学、电磁学、热力学和现代物理学的学习记录。</p>
                     <h4 class="text-xl font-semibold mt-6 mb-3" data-lang-key="subjects.topics">重点主题：</h4>
                     <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li data-lang-key="subjects.physics_t1">牛顿力学 (Newtonian Mechanics)</li>
+                        <li data-lang-key="subjects.physics_t1">群论香香 (Group Theory)</li>
+                        <a 
+  href="https://raw.githubusercontent.com/Uugyfgyb/Fujiasheng/4669e85de00f6b1317c6ecc1adda6f95951d064d/GT.pdf"
+  download="GT文件.pdf"
+>
+  点击下载 GT.pdf 文件
+</a>
                         <li data-lang-key="subjects.physics_t2">电磁学 (Electromagnetism)</li>
                         <li data-lang-key="subjects.physics_t3">相对论 (Relativity)</li>
                     </ul>
